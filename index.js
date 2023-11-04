@@ -7,9 +7,15 @@ const port = process.env.PORT || 5000;
 const jwt = require("jsonwebtoken");
 
 // middleware
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'https://cars-doctor-bc676.web.app');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   next();
+// });
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173" , "https://cars-doctor-bc676.web.app" , "https://cars-doctor-bc676.web.app"],
     credentials: true,
   })
 );
